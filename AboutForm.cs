@@ -30,6 +30,11 @@ namespace CryptokiExplorer
             // Otherwise, display it in a message box.
             System.Diagnostics.Process.Start(target);
 
-        }        
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
