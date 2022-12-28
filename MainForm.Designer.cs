@@ -45,7 +45,9 @@ namespace CryptokiExplorer
             this.contextMenuObject = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.toolStripMenuItemExplore = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItemExport = new System.Windows.Forms.ToolStripMenuItem();
+            this.importToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItemView = new System.Windows.Forms.ToolStripMenuItem();
+            this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lbPIN = new System.Windows.Forms.Label();
             this.textBoxPIN = new System.Windows.Forms.TextBox();
             this.btnVerifyPIN = new System.Windows.Forms.Button();
@@ -71,8 +73,6 @@ namespace CryptokiExplorer
             this.btnCertificate = new System.Windows.Forms.Button();
             this.btnKey = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.importToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.contextMenuObject.SuspendLayout();
             this.statusStrip.SuspendLayout();
@@ -159,6 +159,7 @@ namespace CryptokiExplorer
             // 
             // imageList
             // 
+            this.imageList.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
             this.imageList.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList.ImageStream")));
             this.imageList.TransparentColor = System.Drawing.Color.Transparent;
             this.imageList.Images.SetKeyName(0, "SmartCardReader2.gif");
@@ -183,8 +184,8 @@ namespace CryptokiExplorer
             this.listViewContent.Sorting = System.Windows.Forms.SortOrder.Ascending;
             this.listViewContent.UseCompatibleStateImageBehavior = false;
             this.listViewContent.View = System.Windows.Forms.View.Details;
-            this.listViewContent.MouseClick += new System.Windows.Forms.MouseEventHandler(this.listViewContent_MouseClick);
             this.listViewContent.DoubleClick += new System.EventHandler(this.listViewContent_DoubleClick);
+            this.listViewContent.MouseClick += new System.Windows.Forms.MouseEventHandler(this.listViewContent_MouseClick);
             // 
             // contextMenuObject
             // 
@@ -212,12 +213,26 @@ namespace CryptokiExplorer
             resources.ApplyResources(this.toolStripMenuItemExport, "toolStripMenuItemExport");
             this.toolStripMenuItemExport.Click += new System.EventHandler(this.toolStripMenuItemExport_Click);
             // 
+            // importToolStripMenuItem
+            // 
+            this.importToolStripMenuItem.Image = global::CryptokiExplorer.Properties.Resources.application_side_expand;
+            this.importToolStripMenuItem.Name = "importToolStripMenuItem";
+            resources.ApplyResources(this.importToolStripMenuItem, "importToolStripMenuItem");
+            this.importToolStripMenuItem.Click += new System.EventHandler(this.importToolStripMenuItem_Click);
+            // 
             // toolStripMenuItemView
             // 
             this.toolStripMenuItemView.Image = global::CryptokiExplorer.Properties.Resources.eye;
             this.toolStripMenuItemView.Name = "toolStripMenuItemView";
             resources.ApplyResources(this.toolStripMenuItemView, "toolStripMenuItemView");
             this.toolStripMenuItemView.Click += new System.EventHandler(this.toolStripMenuItemView_Click);
+            // 
+            // deleteToolStripMenuItem
+            // 
+            this.deleteToolStripMenuItem.Image = global::CryptokiExplorer.Properties.Resources.cancel1;
+            this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
+            resources.ApplyResources(this.deleteToolStripMenuItem, "deleteToolStripMenuItem");
+            this.deleteToolStripMenuItem.Click += new System.EventHandler(this.deleteToolStripMenuItem_Click);
             // 
             // lbPIN
             // 
@@ -405,24 +420,9 @@ namespace CryptokiExplorer
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::CryptokiExplorer.Properties.Resources.Cyberneid_new_bicolor_small;
             resources.ApplyResources(this.pictureBox1, "pictureBox1");
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.TabStop = false;
-            // 
-            // importToolStripMenuItem
-            // 
-            this.importToolStripMenuItem.Image = global::CryptokiExplorer.Properties.Resources.application_side_expand;
-            this.importToolStripMenuItem.Name = "importToolStripMenuItem";
-            resources.ApplyResources(this.importToolStripMenuItem, "importToolStripMenuItem");
-            this.importToolStripMenuItem.Click += new System.EventHandler(this.importToolStripMenuItem_Click);
-            // 
-            // deleteToolStripMenuItem
-            // 
-            this.deleteToolStripMenuItem.Image = global::CryptokiExplorer.Properties.Resources.cancel1;
-            this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
-            resources.ApplyResources(this.deleteToolStripMenuItem, "deleteToolStripMenuItem");
-            this.deleteToolStripMenuItem.Click += new System.EventHandler(this.deleteToolStripMenuItem_Click);
             // 
             // MainForm
             // 
@@ -454,8 +454,8 @@ namespace CryptokiExplorer
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "MainForm";
-            this.Load += new System.EventHandler(this.MainForm_Load);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.contextMenuObject.ResumeLayout(false);

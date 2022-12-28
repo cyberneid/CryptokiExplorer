@@ -5,14 +5,10 @@
       "NCryptoki-Core/1.7.0.1": {
         "type": "package",
         "compile": {
-          "lib/netcoreapp3.1/NCryptoki-Core.dll": {
-            "related": ".xml"
-          }
+          "lib/netcoreapp3.1/NCryptoki-Core.dll": {}
         },
         "runtime": {
-          "lib/netcoreapp3.1/NCryptoki-Core.dll": {
-            "related": ".xml"
-          }
+          "lib/netcoreapp3.1/NCryptoki-Core.dll": {}
         }
       }
     }
@@ -40,24 +36,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\ciroc\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\Ciro\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Projects\\Cyberneid\\CryptokiExplorer\\CryptokiExplorer.csproj",
+      "projectUniqueName": "C:\\Users\\Ciro\\Desktop\\CryptokiExplorer\\CryptokiExplorer.csproj",
       "projectName": "CryptokiExplorer",
-      "projectPath": "D:\\Projects\\Cyberneid\\CryptokiExplorer\\CryptokiExplorer.csproj",
-      "packagesPath": "C:\\Users\\ciroc\\.nuget\\packages\\",
-      "outputPath": "D:\\Projects\\Cyberneid\\CryptokiExplorer\\obj\\",
+      "projectPath": "C:\\Users\\Ciro\\Desktop\\CryptokiExplorer\\CryptokiExplorer.csproj",
+      "packagesPath": "C:\\Users\\Ciro\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Ciro\\Desktop\\CryptokiExplorer\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\ciroc\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\Ciro\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -65,7 +56,6 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -95,8 +85,7 @@
           "net47",
           "net471",
           "net472",
-          "net48",
-          "net481"
+          "net48"
         ],
         "assetTargetFallback": true,
         "warn": true,
@@ -108,7 +97,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.415\\RuntimeIdentifierGraph.json"
       }
     }
   }

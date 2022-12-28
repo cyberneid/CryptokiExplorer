@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "X2x6mUMF3UU8/20ndQeSPVePM3cCbEpkSj+98xjsn2IytRBNVhcz8ILlthm6AmfTAG3vZCafpgN1OhKsQKd9CA==",
+  "dgSpecHash": "CIFzvMJ7LoemQp5WJzTtHSFltFJ4sZYsFnWTx5mh+Ua1bqENmmMAoaxT76xSLfL0k0b1cXLRZWccWZB+7uDjgw==",
   "success": true,
-  "projectFilePath": "D:\\Projects\\Cyberneid\\CryptokiExplorer\\CryptokiExplorer.csproj",
+  "projectFilePath": "C:\\Users\\Ciro\\Desktop\\CryptokiExplorer\\CryptokiExplorer.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\ciroc\\.nuget\\packages\\ncryptoki-core\\1.7.0.1\\ncryptoki-core.1.7.0.1.nupkg.sha512"
+    "C:\\Users\\Ciro\\.nuget\\packages\\ncryptoki-core\\1.7.0.1\\ncryptoki-core.1.7.0.1.nupkg.sha512"
   ],
   "logs": []
 }
