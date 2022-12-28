@@ -12,9 +12,7 @@ namespace CryptokiExplorer
 
             try
             {
-                // TODO: FIX THIS. PROPS IS NOW REMOVED
-                //textBoxPKCS11.Text =
-                //MainForm.props.GetProperty("cryptoki", "").Replace("/", "\\");
+                textBoxPKCS11.Text = Properties.Settings.Default.CryptokiPath.Replace("/", "\\");
             }
             catch (Exception)
             {
@@ -29,9 +27,8 @@ namespace CryptokiExplorer
             try
             {
                 Cryptoki c = new Cryptoki(textBoxPKCS11.Text);
-                // TODO: FIX THIS. PROPS IS NOW REMOVED
-                //MainForm.props.SetProperty("cryptoki", textBoxPKCS11.Text.Replace("\\", "/"));
-                DialogResult = DialogResult.OK;
+                Properties.Settings.Default.CryptokiPath = textBoxPKCS11.Text.Replace("\\", "/");
+                Properties.Settings.Default.Save();
             }
             catch (CryptokiException ex)
             {
@@ -50,8 +47,7 @@ namespace CryptokiExplorer
 
         private void SettingsForm_Load(object sender, EventArgs e)
         {
-            // TODO: FIX THIS. PROPS IS NOW REMOVED
-            // textBoxPKCS11.Text = MainForm.props.GetProperty("cryptoki", "");
+            textBoxPKCS11.Text = Properties.Settings.Default.CryptokiPath;
         }
 
         private void btnBrowse_Click(object sender, EventArgs e)

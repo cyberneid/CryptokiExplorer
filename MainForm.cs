@@ -45,35 +45,7 @@ namespace CryptokiExplorer
         {            
             try
             {
-                // load conf from properties
-                //props = new NProperties();
-                try
-                {
-                    FileStream fs = new FileStream(Program.appDir + "\\conf.props", FileMode.Open);
-                    //props.Load(fs);
-                    fs.Close();
-                }
-                catch (IOException)
-                {
-                    MessageBox.Show("Set a valid PKCS#11 module", "First Launch", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                    SettingsForm form = new SettingsForm();
-                    if (form.ShowDialog(this) == DialogResult.OK)
-                    {
-                        try
-                        {
-                            FileStream fs = new FileStream(Program.appDir + "\\conf.props", FileMode.Create);
-                            //props.Store(fs, "Cryptoki Browser conf");
-                            fs.Close();
-                        }
-                        catch (IOException ex1)
-                        {
-                            toolStripStatusLabel.Text = ex1.Message;
-                            toolStripStatusLabel.Image = Properties.Resources.delete;
-                        }
-                    }
-                }
-
-                string path = "C:\\Windows\\System32\\CIEPKI.dll"; //props.GetProperty("cryptoki", "");
+                string path = Properties.Settings.Default.CryptokiPath; //  "C:\\Windows\\System32\\CIEPKI.dll"; //props.GetProperty("cryptoki", "");
                 path = path.Replace("\\", "/");
 
                 _cryptoki = new Cryptoki(path);
@@ -405,8 +377,7 @@ namespace CryptokiExplorer
             
             try
             {
-                // TODO: FIX THIS. PROPS IS NOW REMOVED
-                // listViewContent.Items.Add(new ListViewItem(new string[] { "Library File", props.GetProperty("cryptoki", "smaoscki.dll")}, 1));
+                listViewContent.Items.Add(new ListViewItem(new string[] { "Library File", Properties.Settings.Default.CryptokiPath}, 1));
                 listViewContent.Items.Add(new ListViewItem(new string[] { "Library Name", info.LibDescription }, 1));
                 listViewContent.Items.Add(new ListViewItem(new string[] { "Library Version", info.LibVersion }, 1));
                 listViewContent.Items.Add(new ListViewItem(new string[] { "Library Manufacturer", info.ManufacturerID }, 1));
@@ -1619,8 +1590,7 @@ namespace CryptokiExplorer
 
             listViewContent.Items.Clear();
 
-            // TODO: FIX THIS. PROPS IS NOW REMOVED
-            // _cryptoki = new Cryptoki(props.GetProperty("cryptoki", ""));
+            _cryptoki = new Cryptoki(Properties.Settings.Default.CryptokiPath);
 
             Init();
 
@@ -1649,6 +1619,7 @@ namespace CryptokiExplorer
             SettingsForm form = new SettingsForm();
             if (form.ShowDialog(this) == DialogResult.OK)
             {
+
                 FileStream fs = new FileStream(Program.appDir + "\\conf.props", FileMode.Create);
                 // TODO: FIX THIS. PROPS IS NOW REMOVED
                 //props.Store(fs, "Cryptoki Browser conf");
