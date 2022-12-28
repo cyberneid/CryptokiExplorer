@@ -5,13 +5,12 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
-using Cyberneid.NCryptoki;
 using System.Threading;
 using System.Security.Cryptography.X509Certificates;
 using System.Runtime.InteropServices;
 using System.IO;
 using System.Security.Cryptography;
-using Cyberneid.Util;
+using Cyberneid.NCryptoki;
 
 namespace CryptokiExplorer
 {
@@ -27,7 +26,7 @@ namespace CryptokiExplorer
             Mechs
         };
 
-        public static NProperties props;
+        // public static NProperties props;
 
         Cryptoki _cryptoki;
         SlotList _slotList;
@@ -47,14 +46,14 @@ namespace CryptokiExplorer
             try
             {
                 // load conf from properties
-                props = new NProperties();
+                //props = new NProperties();
                 try
                 {
                     FileStream fs = new FileStream(Program.appDir + "\\conf.props", FileMode.Open);
-                    props.Load(fs);
+                    //props.Load(fs);
                     fs.Close();
                 }
-                catch (IOException ex)
+                catch (IOException)
                 {
                     MessageBox.Show("Set a valid PKCS#11 module", "First Launch", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     SettingsForm form = new SettingsForm();
@@ -63,7 +62,7 @@ namespace CryptokiExplorer
                         try
                         {
                             FileStream fs = new FileStream(Program.appDir + "\\conf.props", FileMode.Create);
-                            props.Store(fs, "Cryptoki Browser conf");
+                            //props.Store(fs, "Cryptoki Browser conf");
                             fs.Close();
                         }
                         catch (IOException ex1)
@@ -74,8 +73,8 @@ namespace CryptokiExplorer
                     }
                 }
 
-                string path = props.GetProperty("cryptoki", "");
-                path = path.Replace("/", "\\");
+                string path = "C:\\Windows\\System32\\CIEPKI.dll"; //props.GetProperty("cryptoki", "");
+                path = path.Replace("\\", "/");
 
                 _cryptoki = new Cryptoki(path);
 
@@ -174,7 +173,7 @@ namespace CryptokiExplorer
                 {
                     _cryptoki.Finalize(IntPtr.Zero);
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
 
                 }
@@ -183,8 +182,8 @@ namespace CryptokiExplorer
 
             Thread.Sleep(2000);
 
-            if (_thread != null)
-                _thread.Abort();
+            _thread?.Abort();
+
             Dispose();
             Application.Exit();
         }
@@ -295,7 +294,7 @@ namespace CryptokiExplorer
                     }                                        
                 }
             }
-            catch (CryptokiException ex)
+            catch (CryptokiException)
             {
                 
                 try
@@ -308,7 +307,7 @@ namespace CryptokiExplorer
                         Invoke(new InitDelegate(Init));
                     }
                 }
-                catch (Exception e1)
+                catch (Exception)
                 {
                 }
 
@@ -323,7 +322,7 @@ namespace CryptokiExplorer
 
                 //Invoke(new InitDelegate(Init));                                                                  
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 try
                 {
@@ -334,7 +333,7 @@ namespace CryptokiExplorer
                         Invoke(new InitDelegate(Init));    
                     }
                 }
-                catch (Exception e1)
+                catch (Exception)
                 {
                 }
 
@@ -398,7 +397,7 @@ namespace CryptokiExplorer
             {
                 info = _cryptoki.Info;
             }
-            catch (CryptokiException ex)
+            catch (CryptokiException)
             {
                 _cryptoki.Initialize();
                 info = _cryptoki.Info;
@@ -406,7 +405,8 @@ namespace CryptokiExplorer
             
             try
             {
-                listViewContent.Items.Add(new ListViewItem(new string[] { "Library File", props.GetProperty("cryptoki", "smaoscki.dll")}, 1));
+                // TODO: FIX THIS. PROPS IS NOW REMOVED
+                // listViewContent.Items.Add(new ListViewItem(new string[] { "Library File", props.GetProperty("cryptoki", "smaoscki.dll")}, 1));
                 listViewContent.Items.Add(new ListViewItem(new string[] { "Library Name", info.LibDescription }, 1));
                 listViewContent.Items.Add(new ListViewItem(new string[] { "Library Version", info.LibVersion }, 1));
                 listViewContent.Items.Add(new ListViewItem(new string[] { "Library Manufacturer", info.ManufacturerID }, 1));
@@ -682,7 +682,6 @@ namespace CryptokiExplorer
                 toolStripStatusLabel.Image = Properties.Resources.delete;
                 //showError(ex);
             }
-            
         }
 
         public Session CurrentSession
@@ -1620,7 +1619,8 @@ namespace CryptokiExplorer
 
             listViewContent.Items.Clear();
 
-            _cryptoki = new Cryptoki(props.GetProperty("cryptoki", ""));
+            // TODO: FIX THIS. PROPS IS NOW REMOVED
+            // _cryptoki = new Cryptoki(props.GetProperty("cryptoki", ""));
 
             Init();
 
@@ -1650,7 +1650,8 @@ namespace CryptokiExplorer
             if (form.ShowDialog(this) == DialogResult.OK)
             {
                 FileStream fs = new FileStream(Program.appDir + "\\conf.props", FileMode.Create);
-                props.Store(fs, "Cryptoki Browser conf");
+                // TODO: FIX THIS. PROPS IS NOW REMOVED
+                //props.Store(fs, "Cryptoki Browser conf");
                 fs.Close();
 
                 btnRefresh_Click(null, null);

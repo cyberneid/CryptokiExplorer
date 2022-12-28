@@ -1,0 +1,94 @@
+1.6.1.3
+- Fixed load error on some x64 OS
+
+1.6.1.2
+- Fixed the marshalling procedure for Mechanism parameter
+
+1.6.1.1
+- Porting to Silverlight
+
+1.6.0.3
+- Several optimizations for Silverlight porting
+
+1.6.0.2
+- Compiled for .NET Framework 3.5 and compliant with .NET 4.0
+
+1.6.0.1
+- Moved to .NET Framework 4.0
+- Unique version for 32 and 64 bit (compiled for AnyCPU)
+- Added several mechanism parameters
+- Removed dependency from NCryptokiMngd.dll
+- Added support for Mono 
+
+1.5.4.1
+- added missed DecryptUpdate method
+
+1.5.3.2
+- removed messagebox when the underlying PKCS#11 dll is not found
+
+1.5.3.1
+- added some new properties that map Key attributes
+- updated api doc
+- minor fixes
+
+1.5.1.2
+- fix in Encrypt and Wrap functions when the data buffer to encrypt/decrypt is smaller then the half of algo's block length
+
+1.5.1.1
+- added SafeNet class containing all SafeNet custom attributes, mechanisms, errors, etc.
+- fix in Encrypt, Decrypt functions when the data buffer to encrypt/decrypt is larger then 1024 byte
+
+1.5.0.1
+- added method Session.DeriveKey 
+
+1.4.7.1
+- added multithreading flag in Cryptoki.Initialize to allow multithreading calls as described in C_Initialize in PKCS#11 v.20 specifications
+- added a new way to install the license passing the licensee and the product key as Cryptoki properties.
+- moved to VS2008. 
+
+1.4.6.2
+- added the attribute CKA_ALLOWED_MECHANISMS to the class ObjectAttribute
+
+1.4.6.1
+- fix in C_FindObjectInit on error TEMPLATE_INCONSISTENT when an empty template is passed.
+
+1.4.6.0
+- fix on Key.KeyGenMechanismType and KeyGenMechanismTypeName that caused and InvalidCastException
+- added a new simpler way to pass a parameter in a mechanism: now Mechanism's parameter is an object 
+  that can take a byte[] (as before) or a struct. Such structs is passed as is to the underlying PKCS#11.
+
+1.4.5.8
+- fix the right length of strings in CK_INFO, CK_SLOT_INFO, CK_TOKEN_INFO structures as specified in PKCS#11 specs in:
+	- C_NCryptokiMndg.C_GetInfo
+	- C_NCryptokiMndg.C_GetTokenInfo
+	- C_NCryptokiMndg.C_GetSlotInfo	
+
+1.4.5.7
+- fix some regression bugs due to changes in 1.4.5.6
+
+1.4.5.6
+- fix on a regression bug in NCryptokiMndg.C_GetAttributeValue that raised an exception on CKA_LABEL and CKA_APPLICATION
+ 
+1.4.5.5 
+- fix Error 19 (CKR_ATTRIBUTE_VALUE_INVALID) with SafeNet PKCS#11 on 64bit platform on the following methods:
+	- Session.GenerateKeyPair
+	- Session.GenerateKey
+	- CryptokiObjects.Find
+	- CryptokiObject.AttributeValue 
+		
+- Added overload to enable binary (no string) PIN for:
+	- SetPIN
+	
+1.4.5.3
+	- Fix Error CKR_USER_ALREADY_LOGGED_IN with SafeNet PKCS#11 on 64bit platform on the following methods:
+		- Session.Login
+
+1.4.5.1
+- Added overload to enable binary (no string) PIN for:
+	- Login
+
+1.4.4.1
+- Added Utils class with several utility methods
+
+ 
+ 

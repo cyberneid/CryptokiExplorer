@@ -1,9 +1,4 @@
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
 using Cyberneid.NCryptoki;
 
@@ -16,11 +11,12 @@ namespace CryptokiExplorer
             InitializeComponent();
 
             try
-            { 
-                textBoxPKCS11.Text =
-                    MainForm.props.GetProperty("cryptoki", "").Replace("/", "\\");
+            {
+                // TODO: FIX THIS. PROPS IS NOW REMOVED
+                //textBoxPKCS11.Text =
+                //MainForm.props.GetProperty("cryptoki", "").Replace("/", "\\");
             }
-            catch (Exception ex)
+            catch (Exception)
             {
             }
         }
@@ -33,7 +29,8 @@ namespace CryptokiExplorer
             try
             {
                 Cryptoki c = new Cryptoki(textBoxPKCS11.Text);
-                MainForm.props.SetProperty("cryptoki", textBoxPKCS11.Text.Replace("\\", "/"));
+                // TODO: FIX THIS. PROPS IS NOW REMOVED
+                //MainForm.props.SetProperty("cryptoki", textBoxPKCS11.Text.Replace("\\", "/"));
                 DialogResult = DialogResult.OK;
             }
             catch (CryptokiException ex)
@@ -53,7 +50,8 @@ namespace CryptokiExplorer
 
         private void SettingsForm_Load(object sender, EventArgs e)
         {
-            textBoxPKCS11.Text = MainForm.props.GetProperty("cryptoki", "");
+            // TODO: FIX THIS. PROPS IS NOW REMOVED
+            // textBoxPKCS11.Text = MainForm.props.GetProperty("cryptoki", "");
         }
 
         private void btnBrowse_Click(object sender, EventArgs e)

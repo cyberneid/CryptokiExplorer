@@ -1,0 +1,14 @@
+D:\Projects\Cyberneid\CryptokiExplorer\obj\Debug\CryptokiExplorer.csproj.AssemblyReference.cache
+D:\Projects\Cyberneid\CryptokiExplorer\obj\Debug\CryptokiExplorer.csproj.SuggestedBindingRedirects.cache
+D:\Projects\Cyberneid\CryptokiExplorer\obj\Debug\CryptokiExplorer.AboutForm.resources
+D:\Projects\Cyberneid\CryptokiExplorer\obj\Debug\CryptokiExplorer.ChangePINForm.resources
+D:\Projects\Cyberneid\CryptokiExplorer\obj\Debug\CryptokiExplorer.CertKeyInfoForm.resources
+D:\Projects\Cyberneid\CryptokiExplorer\obj\Debug\CryptokiExplorer.SettingsForm.resources
+D:\Projects\Cyberneid\CryptokiExplorer\obj\Debug\CryptokiExplorer.DataInfoForm.resources
+D:\Projects\Cyberneid\CryptokiExplorer\obj\Debug\CryptokiExplorer.PasswordForm.resources
+D:\Projects\Cyberneid\CryptokiExplorer\obj\Debug\CryptokiExplorer.UnblockPINForm.resources
+D:\Projects\Cyberneid\CryptokiExplorer\obj\Debug\CryptokiExplorer.MainForm.resources
+D:\Projects\Cyberneid\CryptokiExplorer\obj\Debug\CryptokiExplorer.ObjectBrowser.resources
+D:\Projects\Cyberneid\CryptokiExplorer\obj\Debug\CryptokiExplorer.Properties.Resources.resources
+D:\Projects\Cyberneid\CryptokiExplorer\obj\Debug\CryptokiExplorer.csproj.GenerateResource.cache
+D:\Projects\Cyberneid\CryptokiExplorer\obj\Debug\CryptokiExplorer.csproj.CoreCompileInputs.cache
